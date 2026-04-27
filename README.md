@@ -22,10 +22,18 @@ The purpose of this project is to demonstrate a basic DevOps workflow where a Ja
 ## Project Structure
 
 ```text
-student-devops-java-app/
+studentapp/
 ├── src/
 │   └── main/
 │       └── java/
-│           └── ...
+│           └── com/
+│               └── example/
+│                   └── student/
+│                       └── devops/
+│                           └── java/
+│                               └── app/
+│                                   ├── StudentDevopsJavaApp.java
+│                                   └── HelloController.java
 ├── pom.xml
 ├── README.md
+└── .gitignore
