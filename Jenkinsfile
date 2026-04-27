@@ -12,30 +12,30 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Java application using Maven...'
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Docker Build') {
             steps {
                 echo 'Building Docker image...'
-                sh 'docker build -t student-app .'
+                bat 'docker build -t student-app .'
             }
         }
 
         stage('Run Container') {
             steps {
                 echo 'Running Docker container...'
-                sh 'docker stop student-app-container || true'
-                sh 'docker rm student-app-container || true'
-                sh 'docker run -d --name student-app-container -p 8080:8080 student-app'
+                bat 'docker stop student-app-container || true'
+                bat 'docker rm student-app-container || true'
+                bat 'docker run -d --name student-app-container -p 8080:8080 student-app'
             }
         }
     }
