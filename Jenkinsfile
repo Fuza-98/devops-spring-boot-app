@@ -38,6 +38,15 @@ pipeline {
                 bat 'docker run -d --name student-app-container -p 8080:8080 student-app'
             }
         }
+
+        // New Kubernetes deployment stage
+        stage('Deploy to Kubernetes') {
+            steps {
+                echo 'Deploying to Kubernetes...'
+                bat 'kubectl apply -f deployment.yaml'
+                bat 'kubectl apply -f service.yaml'
+            }
+        }
     }
 }
 
