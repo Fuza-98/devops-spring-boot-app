@@ -39,14 +39,7 @@ pipeline {
             }
         }
 
-        // New Kubernetes deployment stage
-        stage('Deploy to Kubernetes') {
-            steps {
-                echo 'Deploying to Kubernetes...'
-                bat 'kubectl apply -f deployment.yaml'
-                bat 'kubectl apply -f service.yaml'
-            }
-        }
+        
     }
 }
 
